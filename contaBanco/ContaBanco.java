@@ -46,10 +46,10 @@ public class ContaBanco {
 
     public void abrirConta(){
         this.setStatus(true);
-        if (Objects.equals(this.tipo, "CC"))
+        if (this.tipo.equals("CC"))
             this.depositar(50F);
         // se tipo == CP
-        else if (Objects.equals(this.tipo, "CP"))
+        else if (this.tipo.equals("CP"))
             this.depositar(150F);
         else
             System.out.println("!ERRO! |MOTIVO: VALOR DE ENTRADA INVÁLIDO|");
@@ -75,9 +75,9 @@ public class ContaBanco {
                 System.out.println("NÃO FOI POSSÍVEL FAZER O SAQUE! |MOTIVO: SALDO INSUFICIENTE|");
     }
     public void pagarMensal(){
-        if (Objects.equals(this.tipo, "CC"))
+        if (this.tipo.equals("CC"))
             this.sacar(12F);
-        if (Objects.equals(this.tipo, "CP"))
+        if (this.tipo.equals("CP"))
             this.sacar(20F);
     }
 }

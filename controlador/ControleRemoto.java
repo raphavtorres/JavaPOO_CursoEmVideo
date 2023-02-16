@@ -11,7 +11,7 @@ public class ControleRemoto implements Controlador{
     // Métodos Especiais
     public ControleRemoto(){
         this.setVolume(50);
-        this.setLigado(false);
+        this.setLigado(true);
         this.setTocando(false);
     }
     private int getVolume() {
@@ -34,77 +34,84 @@ public class ControleRemoto implements Controlador{
     }
 
     @Override
-    public Method ligar() {
-        return null;
+    public void ligar() {
+        this.setLigado(true);
     }
 
     @Override
-    public Method desligar() {
-        return null;
+    public void desligar() {
+        this.setLigado(false);
     }
 
     @Override
-    public Method abrirMenu() {
-        System.out.println(getLigado());
-        System.out.println(getVolume());
-        for (int i = 0; i < getVolume(); i += 10){
-            System.out.println("|");
+    public void abrirMenu() {
+        if (this.getLigado()){
+            System.out.println("-----MENU-----");
+            System.out.println("Está ligado?: " + this.getLigado());
+            System.out.println("Está tocando?: " + this.getTocando());
+            System.out.print("Volume: " + this.getVolume());
+            for (int i = 0; i < this.getVolume(); i += 10){
+                System.out.print(" ||");
+            }
+            System.out.println(" ");
+        } else {
+            System.out.println("Não foi possível abrir Menu");
         }
-        System.out.println(getTocando());
-        return null;
+
     }
 
     @Override
-    public Method fecharMenu() {
+    public void fecharMenu() {
         System.out.println("Fechando MENU");
-        return null;
     }
 
     @Override
-    public Method maisVolume() {
-        if(getLigado()){
-            setVolume(getVolume() + 1);
+    public void maisVolume() {
+        if(this.getLigado()){
+            this.setVolume(this.getVolume() + 5);
+        } else {
+            System.out.println("Impossível aumentar volume");
         }
-        return null;
     }
 
     @Override
-    public Method menosVolume() {
-        if(getLigado()){
-            setVolume(getVolume() - 1);
+    public void menosVolume() {
+        if(this.getLigado()){
+            this.setVolume(this.getVolume() - 5);
+        } else {
+            System.out.println("Impossível diminuir volume");
         }
-        return null;
     }
 
     @Override
-    public Method ligarMudo() {
-        if(getLigado() && getVolume() > 0){
-            setVolume(0);
+    public void ligarMudo() {
+        if(this.getLigado() && this.getVolume() > 0){
+            this.setVolume(0);
         }
-        return null;
     }
 
     @Override
-    public Method desligarMudo() {
-        if(getLigado() && getVolume() == 0){
-            setVolume(50);
+    public void desligarMudo() {
+        if(this.getLigado() && this.getVolume() == 0){
+            this.setVolume(50);
         }
-        return null;
     }
 
     @Override
-    public Method play() {
-        if(getLigado() && !getTocando()){
-            setTocando(true);
+    public void play() {
+        if(this.getLigado() && !(this.getTocando())){
+            this.setTocando(true);
+        } else {
+            System.out.println("Não foi possível reproduzir");
         }
-        return null;
     }
 
     @Override
-    public Method pause() {
-        if(getLigado() && getTocando()){
-            setTocando(false);
+    public void pause() {
+        if(this.getLigado() && this.getTocando()){
+            this.setTocando(false);
+        } else {
+            System.out.println("Não foi possível pausar");
         }
-        return null;
     }
 }

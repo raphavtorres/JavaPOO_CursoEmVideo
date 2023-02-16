@@ -3,14 +3,14 @@ package controlador;
 import java.lang.reflect.Method;
 
 public interface Controlador {
-    public abstract Method ligar();
-    public abstract Method desligar();
-    public abstract Method abrirMenu();
-    public abstract Method fecharMenu();
-    public abstract Method maisVolume();
-    public abstract Method menosVolume();
-    public abstract Method ligarMudo();
-    public abstract Method desligarMudo();
-    public abstract Method play();
-    public abstract Method pause();
+    public abstract void ligar();
+    public abstract void desligar();
+    public abstract void abrirMenu();
+    public abstract void fecharMenu();
+    public abstract void maisVolume();
+    public abstract void menosVolume();
+    public abstract void ligarMudo();
+    public abstract void desligarMudo();
+    public abstract void play();
+    public abstract void pause();
 }
