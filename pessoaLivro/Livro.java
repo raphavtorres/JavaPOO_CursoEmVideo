@@ -3,7 +3,8 @@ package pessoaLivro;
 import java.util.Random;
 
 public class Livro implements Publicacao{
-    public Livro(String tit, String aut, String no, int totPag, Pessoa le){
+
+    public Livro(String tit, String aut, int totPag, Pessoa le){
         this.setTitulo(tit);
         this.setAutor(aut);
         this.setTotPaginas(totPag);
@@ -58,6 +59,11 @@ public class Livro implements Publicacao{
         System.out.println("Título: " + this.getTitulo());
         System.out.println("Autor: " + this.getAutor());
         System.out.println("Número de páginas: " + this.getTotPaginas());
+        System.out.println("Página atual: " + this.getPagAtual());
+        System.out.println("Aberto: " + this.getAberto());
+        System.out.println("Leitor: " + this.getLeitor().getNome());
+        System.out.println("Idade do leitor: " + this.getLeitor().getIdade());
+        System.out.println("Sexo do leitor: " + this.getLeitor().getSexo());
     }
 
     @Override
