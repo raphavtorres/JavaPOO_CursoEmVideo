@@ -2,36 +2,40 @@ package heranca;
 
 public class Main {
     public static void main(String[] args){
-        Pessoa p1 = new Pessoa();
-        Aluno p2 = new Aluno();
-        Professor p3 = new Professor();
-        Funcionario p4 = new Funcionario();
+        //Pessoa p1 = new Pessoa();
+        Visitante v1 = new Visitante();
+        Aluno a1 = new Aluno();
+        Bolsista b1 = new Bolsista();
+        Professor pro1 = new Professor();
+        Funcionario f1 = new Funcionario();
 
-        p1.setNome("Pedro");
-        p2.setNome("Maria");
-        p3.setNome("Cláudio");
-        p4.setNome("Fabiana");
+        //p1.setNome("Pedro");
+        a1.setNome("Maria");
+        pro1.setNome("Cláudio");
+        f1.setNome("Fabiana");
+        b1.setNome("Marcos");
 
-        p1.setSexo("M");
-        p4.setSexo("F");
-        p2.setIdade(18);
+        //p1.setSexo("M");
+        f1.setSexo("F");
+        a1.setIdade(18);
+        b1.setIdade(19);
 
-        p2.setCurso("Informática");
-        p3.setSalario(2500.75f);
-        p4.setSetor("Estoque");
+        a1.setCurso("Informática");
+        pro1.setSalario(2500.75f);
+        f1.setSetor("Estoque");
 
-        p1.detalhes();
-        p2.detalhes();
-        p3.detalhes();
-        p4.detalhes();
+        //p1.detalhes();
+        a1.detalhes();
+        pro1.detalhes();
+        f1.detalhes();
+        b1.detalhes();
 
+        a1.setCurso("Informática");
+        pro1.setNome("2500.75");
+        f1.setNome("Estoque");
 
-        p2.setCurso("Informática");
-        p3.setNome("2500.75");
-        p4.setNome("Estoque");
+        a1.pagarMens(); // mesmo nome de método, mas funcionamento diferente
+        b1.pagarMens();
 
-//        p1.receberAum(550.20);
-//        p2.mudarTrabalho();
-//        p4.cancelarMatr();
     }
 }

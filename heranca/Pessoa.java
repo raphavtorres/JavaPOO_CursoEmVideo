@@ -1,9 +1,9 @@
 package heranca;
 
-public class Pessoa {
-    private String nome;
-    private int idade;
-    private String sexo;
+public abstract class Pessoa {
+    protected String nome;
+    protected int idade;
+    protected String sexo;
 
     public void fazerAniv(){
         this.setIdade(this.getIdade() + 1);
